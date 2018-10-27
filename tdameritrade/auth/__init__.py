@@ -7,10 +7,7 @@ def authentication(client_id, redirect_uri):
     client_id = client_id + '@AMER.OAUTHAP'
     url = 'https://auth.tdameritrade.com/auth?response_type=code&redirect_uri=' + up.quote(redirect_uri) + '&client_id=' + up.quote(client_id)
 
-    options = webdriver.ChromeOptions()
-    options.binary_location = "/Applications/Chrome.app/Contents/MacOS/Google Chrome"
-    chrome_driver_binary = "/usr/local/bin/chromedriver"
-    driver = webdriver.Chrome(chrome_driver_binary, chrome_options=options)
+    driver = webdriver.Chrome()
 
     driver.get(url)
 
